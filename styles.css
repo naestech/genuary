@@ -1,0 +1,157 @@
+:root {
+    --bgcolor: #000;
+    --textcolor: #ccc;
+    --textstrong: #9dc;
+    --texthighlight: #9988ff;
+    --border-color: #333055;
+    --hover-color: #131313;
+    --selected-color: #f0f;
+}
+
+body {
+    background: var(--bgcolor);
+    color: var(--textcolor);
+    line-height: 1.5;
+    font-family: Arial, "Helvetica Neue", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+h1 {
+    color: var(--textstrong);
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 2em;
+}
+
+.battle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.prompt-card {
+    flex: 1;
+    max-width: 400px;
+    min-height: 200px;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5em;
+    padding: 2em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.prompt-card:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-5px);
+}
+
+.prompt-content {
+    text-align: center;
+}
+
+.prompt-title {
+    color: var(--textstrong);
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.prompt-credit {
+    color: var(--textcolor);
+    font-size: 1.3em;
+    line-height: 1.4;
+    font-style: normal;
+}
+
+.vs {
+    color: var(--selected-color);
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.progress-bar {
+    text-align: center;
+    margin: 2em 0;
+    color: var(--textstrong);
+}
+
+#exportButton {
+    display: block;
+    margin: 2em auto;
+    padding: 1em 2em;
+    background-color: var(--texthighlight);
+    color: var(--bgcolor);
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+#exportButton:hover {
+    background-color: var(--selected-color);
+}
+
+@media (max-width: 768px) {
+    .battle-container {
+        flex-direction: column;
+    }
+    
+    .prompt-card {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .vs {
+        transform: rotate(90deg);
+    }
+}
+
+.rankings-display {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.winner {
+    margin-bottom: 2em;
+    padding: 1em;
+    border: 2px solid var(--selected-color);
+    border-radius: 0.5em;
+    background: rgba(255, 0, 255, 0.1);
+}
+
+.winner h2 {
+    color: var(--selected-color);
+    margin-bottom: 0.5em;
+}
+
+.rankings-list {
+    margin-top: 2em;
+}
+
+.rankings-list h2 {
+    color: var(--textstrong);
+    margin-bottom: 1em;
+}
+
+.rankings-list p {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border-bottom: 1px solid var(--border-color);
+} 
